@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- markdown to HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.2.10/webcomponents-loader.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha256-1fEPhSsRKlFKGfK3eO710tEweHh1fwokU5wFGDHO+vg=" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/10.0.0/markdown-it.min.js" integrity="sha256-YASERpEeN8gRNr/Fy4Km34WGFqIq1h6HkJMAQnVHlhk=" crossorigin="anonymous"></script> -->
+    
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Bitter:700|Ubuntu" rel="stylesheet">
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- Bootstrap CSS & JS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- MDB css -->
+    <link href="css/mdb.css" rel="stylesheet" type="text/css">
+    <!-- CSS -->
+    <link href="css/styles-project.css" rel="stylesheet" type="text/css">
+    <link href="css/styles-blog.css" rel="stylesheet" type="text/css">
+
+    <!-- JS scroll down -->
+    <script src="js/scroll-down.js"></script>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="favicon.png">
+
+    <title>blog | hilmihisham</title>
+</head>
+<body>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top pt-1 pb-1" style="background: rgba(0, 67, 105, 0.7)">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/"><img src="images/doodle400x400.png" alt="Logo" style="width:32px;"></a>
+        
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link my-navlink-color" href="/"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;HOME</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link my-navlink-color" href="projects-page.html"><i class="fas fa-code"></i>&nbsp;&nbsp;CODE REPO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link my-navlink-color" href="resume-page.html"><i class="fas fa-address-card"></i>&nbsp;&nbsp;RESUME</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-code-branch"></i>&nbsp;&nbsp;PROJECTS</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="battle490.html">Battle-490</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link my-navlink-color" href="blog-index.html"><i class="fab fa-tumblr"></i>&nbsp;&nbsp;#text</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Intro -->
+    <header>
+        <!-- Mask (edit ID name, and include header photo in styles-project.css) -->
+        <div id="intro-blog" class="view">
+            <div class="mask rgba-teal-light">
+                <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                    <div class="row d-flex justify-content-center text-center">
+                        <div class="col-md-10">
+                            <!-- Heading -->
+                            <h1 class="pt-5 mb-2">#text</h1>
+                            <!-- Description -->
+                            <h2 class="my-4">i wrote stuff.. | <a href="https://hilmihisham.tumblr.com/" target="_blank"><i class="fab fa-tumblr"></i></a></h2>
+                            <div id="downarrow" onclick="scrollDown()">&#8595;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- 
+            blog1: mask rgba-orange-light
+            blog2: mask rgba-cyan-light
+            blog3: mask rgba-green-light
+            blog4: mask rgba-red-light
+        -->
+
+        <section class="sectionblog1 sectionblogpost">
+            <div class="container text-center">
+                <a href="blog-pages/001-blog-build.html" ><h1 class="textblog">#001: #text page build process.</h1></a>
+                <p class="blogdate">17 April 2020</p>
+                <!-- <zero-md src="markdown/test.md"></zero-md> -->
+            </div>
+        </section>
+
+        <!-- contact links section (before footer) -->
+        <section class="sectionend3">
+            <div class="container">
+                <div class="contact-info">
+                    <a href="mailto:muhammadhilmi.badrolhisham.272@my.csun.com"><i class="far fa-envelope"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://github.com/hilmihisham" target="_blank"><i class="fab fa-github-alt"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://www.linkedin.com/in/hilmihisham/" target="_blank"><i class="fab fa-linkedin"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://hilmihisham.tumblr.com" target="_blank"><i class="fab fa-tumblr"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://www.instagram.com/hilmihisham/" target="_blank"><i class="fab fa-instagram"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://www.youtube.com/channel/UCAMEaCIqFgxEumO5nML_Kxg"><i class="fab fa-youtube"></i></a>
+                    <br><br>
+                    <p>Found a bug? Thought of collaborating? Or just wanna talk? Let's keep in touch!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer">
+        <p>Copyright <i class="far fa-copyright"></i> 2020 | Muhammad Hilmi Badrol Hisham</p>
+    </footer>
+</body>
+
+<!-- scripts to render md page -->
+<!-- <script type="text/javascript">
+
+    // read md file
+    // Check for the various File API support.
+    // if (window.File && window.FileReader && window.FileList && window.Blob) {
+    //     // Great success! All the File APIs are supported.
+    //     alert("YES!");
+    // } else {
+    //     alert('The File APIs are not fully supported in this browser.');
+    // }
+
+    // TODO: need to find out how to read local file using js
+    var fr = new FileReader();
+    fr.readAsText("F:/Projects/web-hilmihisham/page-000/markdown/test.txt");
+
+    // fetch('./markdown/test.md', {mode:"no-cors"})
+    // .then(response => response.text())
+    // .then(data => console.log(data))
+    // .catch(error => console.error(error));
+
+    // TODO: if local file have been read, then just put the string into md.render
+    var md = window.markdownit();
+    var result = md.render('# markdown-it rulezz!');
+    document.getElementById("blogpost").innerHTML = result;
+</script> -->
+
+</html>

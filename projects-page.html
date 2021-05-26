@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Bitter:700|Ubuntu" rel="stylesheet">
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- MDB css -->
+    <link href="css/mdb.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap CSS & JS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link href="css/styles-project.css" rel="stylesheet" type="text/css">
+
+    <!-- JS scroll down -->
+    <script src="js/scroll-down.js"></script>
+
+    <title>code repo | hilmihisham</title>
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="favicon.png">
+</head>
+<body>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top pt-1 pb-1" style="background: rgba(0, 67, 105, 0.7)">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/"><img src="images/doodle400x400.png" alt="Logo" style="width:32px;"></a>
+        
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link my-navlink-color" href="/"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;HOME</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link my-navlink-color" href="projects-page.html"><i class="fas fa-code"></i>&nbsp;&nbsp;CODE REPO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link my-navlink-color" href="resume-page.html"><i class="fas fa-address-card"></i>&nbsp;&nbsp;RESUME</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-code-branch"></i>&nbsp;&nbsp;PROJECTS</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="battle490.html">Battle-490</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link my-navlink-color" href="blog-index.html"><i class="fab fa-tumblr"></i>&nbsp;&nbsp;#text</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Intro -->
+    <header>
+        <!--Mask-->
+        <div id="intro-repo" class="view">
+            <div class="mask rgba-teal-light">
+                <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                    <div class="row d-flex justify-content-center text-center">
+                        <div class="col-md-10">
+                            <!-- Heading -->
+                            <h1 class="pt-5 mb-2">CODE REPOSITORY</h1>
+                            <!-- Description -->
+                            <h2 class="my-4">JAVA | C# | UNITY3D | WEB DESIGN | <a href="https://github.com/hilmihisham/" target="_blank"><i class="fab fa-github-alt"></i></a></h2>
+                            <div id="downarrow" onclick="scrollDown()">&#8595;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Mask-->
+    </header>
+    
+    <main class="main">
+        <!-- blank section to duplicate later on -->
+        <!--
+        <section class="section1">
+            <div class="container">
+                <h2 class="mt-0 sectiontext">Title</h2>
+                <div class="media">
+                    <img class="align-self-start mr-3 mt-3 project-img" src="images/coderepo/..." alt="Title">
+                    <div class="media-body">
+                        <p class="pt-3">
+                            Description
+                            <br><br>
+                            <i>Language<br>October 2018</i>
+                            <br><br>
+                            <i class="fab fa-github-alt"></i> <a href="https://github.com/hilmihisham/..." target="_blank" class="my-links">Github repo.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <!-- PlatformSimulation  -->
+        <section class="section4 sectiontop">
+            <div class="container">
+                <h2 class="mt-0 sectiontext">Platform Simulation</h2>
+                <div class="media">
+                    <img class="align-self-start mr-3 mt-3 project-img" src="images/coderepo/platformsim.png" alt="Platform Simulation">
+                    <div class="media-body">
+                        <p class="pt-3">
+                            A software system that can be used to simulate "Kinetic Art". User can build and configure the platform for starter, and will be able to program each node in the platform to make their own "Kinetic Art" design. Also included is the functionality to save and load their already-made design, which the user can then simulate their finished design straight away without having to create a new one each time.
+                            <br><br>
+                            <i>C#, Unity3D<br>September 2018 - December 2018 (version 0.3.1 released for project submission)</i>
+                            <br><br>
+                            <i class="fab fa-github-alt"></i> <a href="https://github.com/hilmihisham/PlatformSimulation" target="_blank" class="my-links">Github repo.</a>
+                            <br>
+                            <i class="far fa-file-alt"></i> <a href="files/PlatformSimDocs.pdf" target="_blank" class="my-links">Program Documentation.</a>
+                            <br>
+                            <i class="fas fa-download"></i> <a href="https://github.com/hilmihisham/PlatformSimulation/releases" target="_blank" class="my-links">Download (v0.3.2) for Windows.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Buliding Blocks -->
+        <section class="section1">
+            <div class="container">
+                <h2 class="mt-0 sectiontext">Building Blocks</h2>
+                <div class="media">
+                    <img class="align-self-start mr-3 mt-3 project-img" src="images/coderepo/buildingblocks.png" alt="Building Blocks">
+                    <div class="media-body">
+                        <p class="pt-3">
+                            A simple Minecraft clone for my school project. I've added a couple of new features not required for homework and had it posted on my Github page after the project is due. It's still ongoing so I'll for sure pick this project up again and improve more on it on my free time.
+                            <br><br>
+                            <i>C#, Unity3D<br>October 2018</i>
+                            <br><br>
+                            <i class="fab fa-github-alt"></i> <a href="https://github.com/hilmihisham/BuildingBlocks" target="_blank" class="my-links">Github repo.</a>
+                            <br>
+                            <i class="fas fa-download"></i> <a href="https://github.com/hilmihisham/BuildingBlocks/releases" target="_blank" class="my-links">Download (v0.1.4) for Windows.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator -->
+        <section class="section2">
+            <div class="container">
+                <h2 class="mt-0 sectiontext">Calculator with Java Swing</h2>
+                <div class="media">
+                    <img class="align-self-start mr-3 mt-3 project-img" src="images/coderepo/calculator.png" alt="Calculator with Java Swing">
+                    <div class="media-body">
+                        <p class="pt-3">
+                            A calculator program using Java Swing as the GUI. This was initially a project for my COMP 585 - GUI class. The project was already finished by its due (for all the required functionality for the project), but I'm still continuing this project after that - adding more functionality, updating the looks, and etc mostly for fun.
+                            <br><br>
+                            <i>Java + Swing API<br>September 2018</i>
+                            <br><br>
+                            <i class="fab fa-github-alt"></i> <a href="https://github.com/hilmihisham/Calculator" target="_blank" class="my-links">Github repo.</a>
+                            <br>
+                            <i class="fas fa-download"></i> <a href="https://github.com/hilmihisham/Calculator/releases/download/v1.1/Calculator.jar" target="_blank" class="my-links">Download .jar (v1.1).</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Battle490 -->
+        <section class="section3">
+            <div class="container">
+                <h2 class="mt-0 sectiontext">Battle-490</h2>
+                <div class="media">
+                    <img class="align-self-start mr-3 mt-3 project-img" src="images/coderepo/battle490.png" alt="Battle-490">
+                    <div class="media-body">
+                        <p class="pt-3">
+                            An Augmented Reality (AR) Turn-based Multiplayer Strategy game developed during my final year in CSUN for Senior Design Project course. Acted as Product Owner as well as designing and developing the game. Main components of the project consists of Unity3D Game Engine, C# Language, and Vuforia SDK for AR technology.
+                            <br><br>
+                            <i>C#, Unity3D<br>September 2017 - May 2018</i>
+                            <br><br>
+                            <i class="fas fa-globe"></i> <a href="battle490.html" target="_blank" class="my-links">Project website.</a>
+                            <br>
+                            <i class="fab fa-github-alt"></i> <a href="https://github.com/hilmihisham/Battle-490" target="_blank" class="my-links">Github repo.</a>
+                            <br>
+                            <i class="far fa-file-alt"></i> <a href="files/490DesignDocs.pdf" target="_blank" class="my-links">Design Documentation.</a>
+                            <br>
+                            <i class="fas fa-download"></i> <a href="https://drive.google.com/file/d/1pX4AZTVs45SGL4HLg69O-kjLuBop_-8A/view?usp=sharing" target="_blank" class="my-links">Download .apk (v1) for Android.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+                
+        <section class="sectionend1">
+            <div class="container">
+                <h2 class="sectiontext">My Goal</h2>
+                <p class="pt-3">
+                    I've been developing software and programs since I've got into college in 2015; with projects ranging from low-level programming in C, several algorithms and data structures programs, some mini-games in C# and Unity3D, to object-oriented designs in my strongest suit Java as well as web design (this page if it wasn't obvious enough). I quite enjoy coding and programming ever since I first started doing it, and so my goal is to hopefully keep doing this until forever, I guess. As of now, I'm very interested in gaming and motorsports, so if I would somehow be able to get myself into either one of those industry, it should be very nice, no?
+                </p>
+            </div>
+        </section>
+
+        <section class="sectionend2">
+            <div class="container">
+                <h2 class="sectiontext">Technical Skills</h2>
+                <h3 class="pt-3">Java</h3>
+                <p>
+                    I started getting myself into coding with this language, so I can say that I have quite some confidence writing using Java compared to other language. I've used Java in most of my projects so far, coding not just command-line interface programs, but also graphical interface applications having used both Java Swing and JavaFX. 
+                </p>
+                <h3>C# and Unity3D</h3>
+                <p>
+                    I first introduced to C# when we decided to make a game using Unity3D engine back in my senior design project (<a href="https://github.com/hilmihisham/Battle-490" target="_blank" class="my-links">Battle-490</a>). Some time after that, I finally got used to the language and all the useful tools within Unity that I can say I enjoyed making projects using both of these. My senior design project does taught me a lot about game development process and how to design and build a game from scratch. I've dreaded the process of finishing that project, some time along the way, but the stuff that I've learned in the process will definitely be useful to me in the future.
+                </p>
+                <h3>Web Design</h3>
+                <p>
+                    I've taught myself some basic HTML and CSS before formally taking a class about it in college - and further honing my skills in HTML and CSS as well as JavaScript and web application technology such as node.js and vue.js among others. I like doing design (being Editor-in-Chief for my high school's yearbook can prove that), and designing website is a way to wind myself down from other programming projects that I have. 
+                </p>
+                <h3>C</h3>
+                <p>
+                    I do have several school projects involving C language. While I haven't got much projects involving C that I can show, those projects that I have done with it does gave me some insight of just how much control I have over the hardware compared to high-level language.
+                </p>
+            </div>
+        </section>
+
+        <section class="sectionend3">
+            <div class="container">
+                <div class="contact-info">
+                    <a href="mailto:mail@hilmihisham.com"><i class="far fa-envelope"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://github.com/hilmihisham" target="_blank"><i class="fab fa-github-alt"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://www.linkedin.com/in/hilmihisham/" target="_blank"><i class="fab fa-linkedin"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://hilmihisham.tumblr.com" target="_blank"><i class="fab fa-tumblr"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://www.instagram.com/hilmihisham/" target="_blank"><i class="fab fa-instagram"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://www.youtube.com/channel/UCAMEaCIqFgxEumO5nML_Kxg"><i class="fab fa-youtube"></i></a>
+                    <br><br>
+                    <p>Found a bug? Thought of collaborating? Or just wanna talk? Let's keep in touch!</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- footer -->
+    <footer id="footer">
+        <p>Copyright <i class="far fa-copyright"></i> 2019 | Muhammad Hilmi Badrol Hisham</p>
+    </footer>
+</body>
+</html>

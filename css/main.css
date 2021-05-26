@@ -1,0 +1,67 @@
+/* Color Palette (fonts)
+#62c2f1 (blue)
+#ffffff (white)
+#ffa63e (orange)
+#8a1d00 (red)
+#008d3d (green)
+*/
+
+/* note: used in index.html */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bitter', serif;
+    color: white;
+    text-shadow: 2px 2px 2px #161415; /* X-offset, Y-offset, blur, color */
+}
+p {
+    font-family: 'Ubuntu', sans-serif;
+    /* font-size: 140%; */
+    font-weight: bold;
+    color: #ffa63e;
+    text-shadow: 2px 2px 2px #161415; /* X-offset, Y-offset, blur, color */
+}
+a {
+    font-family: 'Ubuntu', sans-serif;
+    text-decoration: none;
+    color: #62c2f1;
+}
+.text-link a {
+    /* font-size: 125%; */
+    font-weight: bold;
+}
+.contact-info a {
+    /* socmed logos */
+    font-size: 200%;
+}
+.text-link a:hover, .contact-info a:hover {
+    color: #cc2c00;
+    text-decoration: none;
+}
+
+main {
+    height: 100vh; /* take entire 100% viewport-height*/
+    background: linear-gradient(rgba(8,135,197, 0.65), rgba(1, 59, 87, 0.9)), url(../images/bg-mainpage.jpg) no-repeat;
+    display: flex; /* make text content in the middle */
+    flex-direction: column; /* align text vertically */
+    align-items: center; /* center text horizontally */
+    justify-content: center; /* center text vertically */
+    background-size: cover;
+}
+.column-narrow {
+    /* width: 45%;  */
+    /* float: left;  */
+    text-align: right;
+    padding-right: 3%;
+    /* min-height: 175px; */
+}
+.column-wide {
+    /* width: 55%;  */
+    /* float: right;  */
+    /* min-height: 225px; */
+    text-align: left;
+}
+.profile-img { 
+    /* profile picture */ 
+    height: 100px;
+    /* width: 35%; */
+}

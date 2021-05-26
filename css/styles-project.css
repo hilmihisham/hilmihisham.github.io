@@ -1,0 +1,208 @@
+/* Color Palette  (backgrounds)
+navbar: rgba(0, 67, 105, 0.9)
+(sections: 1 > 2 > 3 > 4 > 1... > end1 > end2 > end3 > footer)
+    #f7e1c8 (smoked peach)
+    #b2cee3 (light blue)
+    #6fc7bc (light green)
+    #dd9f99 (light red)
+
+    #67759d (grey-blue)
+    #acb3c9 (light-grey-blue)
+    #d5d9e4 (light-light-grey-blue lol)
+(footer: mintcream)
+*/
+
+/* Color Palette (fonts)
+(navbar: mintcream)
+#62c2f1 (blue)
+#ffffff (white)
+#ffa63e (orange)
+#8a1d00 (red)
+#008d3d (green)
+*/
+
+/* note: used in every other pages except index.html */
+
+/* Global styles 
+------------------------------------*/
+body {
+    background: lightsteelblue;
+    margin: 0%;
+    font-size: 110%;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bitter', serif;
+}
+p, li, a, .contact-info {
+    font-family: 'Ubuntu', sans-serif;
+}
+.contact-info {
+    text-align: center;
+}
+.content-wrap {
+    max-width: 950px; 
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden;
+}
+
+/* Header 
+------------------------------------*/
+header {
+    height: 100vh;
+    text-shadow: 2px 2px 2px #161415; /* X-offset, Y-offset, blur, color */
+}
+#intro-repo {
+    height: 100%;
+    background: url(../images/bg-coderepo.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#intro-resume {
+    height: 100%;
+    background: url(../images/bg-resume.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#intro-blog {
+    height: 100%;
+    background: url(../images/bg-blogindex.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#intro-battle {
+    height: 100%;
+    background: url(../images/battle490/bg-header.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+header h1 {
+    font-size: 2.5em;
+    color: white;
+    padding-top: 50vh;
+}
+header h2, header a, header h3 {
+    margin-top: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffa63e;
+    font-weight: 500; 
+}
+#downarrow {
+    font-size: 2.5em;
+    color: white;
+    /* margin-bottom: 5vh; */
+}
+#downarrow:hover, header a:hover {
+    cursor: pointer;
+    color: #cc2c00;
+}
+
+/* Projects picture
+-----------------------------------*/
+.project-img { 
+    height: 25%;
+    width: 25%;
+    border-radius: 10%;
+}
+
+/* Section Colors
+------------------------------------*/
+.section1 {
+    padding-top: 40px; /* padding to give room to navbar */
+    background: #f7e1c8;
+    padding-bottom: 40px; /* balancing the top and bottom spaces */
+}
+.section2 {
+    padding-top: 40px; /* padding to give room to navbar */
+    background: #b2cee3;
+    padding-bottom: 40px; /* balancing the top and bottom spaces */
+}
+.section3 {
+    padding-top: 40px; /* padding to give room to navbar */
+    background: #6fc7bc;
+    padding-bottom: 40px; /* balancing the top and bottom spaces */
+}
+.section4 {
+    padding-top: 40px; /* padding to give room to navbar */
+    background: #dd9f99;
+    padding-bottom: 40px; /* balancing the top and bottom spaces */
+}
+.sectiontop {
+    padding-top: 75px; /* padding to give room to navbar */
+}
+.sectionend1 {
+    padding-top: 40px; /* padding to give room to navbar */
+    background: #67759d;
+    padding-bottom: 40px; /* balancing the top and bottom spaces */
+}
+.sectionend2 {
+    padding-top: 40px; /* padding to give room to navbar */
+    background: #acb3c9;
+    padding-bottom: 40px; /* balancing the top and bottom spaces */
+}
+.sectionend3 {
+    padding-top: 40px; /* padding to give room to navbar */
+    background: #d5d9e4;
+    padding-bottom: 40px; /* balancing the top and bottom spaces */
+}
+
+/* Section Headers
+------------------------------------*/
+h2.sectiontext {
+    text-align: left;
+    margin-top: 0%; 
+    margin-bottom: 0%;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #8a1d00;
+}
+
+/* Section Contents
+------------------------------------*/
+.my-links {
+    color: rgb(0, 67, 105); /* force link color to blue */
+}
+.my-links:hover {
+    color: #cc2c00;
+}
+.not-top-row {
+    /* create a line to separate every details row */
+    border-top: 2px dotted #db7a0b;
+}
+.videoWrapper {
+    position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	/* padding-top: 25px; */
+    height: 0;
+    width: 100%;
+}
+.videoWrapper iframe {
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Footer
+------------------------------------*/
+.contact-info a {
+    text-decoration: none; /* remove underline */
+    color: rgb(0, 67, 105); /* force link color to blue */
+    font-size: 200%;
+}
+.contact-info a:hover {
+    color: #cc2c00;
+}
+footer {
+    background: mintcream;
+    padding: 20px 10px 30px 10px;
+    text-align: center;
+}

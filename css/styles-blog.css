@@ -1,0 +1,47 @@
+/* Link to section
+------------------------------------*/
+.textblog {
+    color: rgb(0, 67, 105);
+    /*text-shadow: 2px 2px 2px #707070; */ /* X-offset, Y-offset, blur, color */
+    font-weight: 600;
+}
+.textblog:hover {
+    color: #cc2c00;
+}
+.blogdate {
+    color: #008d3d;
+    font-size: 125%;
+    /*text-shadow: 2px 2px 2px #555555; */ /* X-offset, Y-offset, blur, color */
+    font-weight: 600;
+}
+
+/* Section Colors
+------------------------------------*/
+.sectionblog1 {
+    background: #f7e1c8;
+}
+.sectionblog2 {
+    background: #b2cee3;
+}
+.sectionblog3 {
+    background: #6fc7bc;
+}
+.sectionblog4 {
+    background: #dd9f99;
+}
+.sectionblogtop {
+    padding-top: 50px; /* padding to give room to navbar */
+}
+.sectionblogend1 {
+    background: #67759d;
+}
+.sectionblogend2 {
+    background: #acb3c9;
+}
+.sectionblogend3 {
+    background: #d5d9e4;
+}
+.sectionblogpost {
+    padding-top: 50px; /* padding to give room to navbar */
+    padding-bottom: 50px; /* balancing the top and bottom spaces */
+}

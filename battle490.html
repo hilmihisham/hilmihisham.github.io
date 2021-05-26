@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Bitter:700|Ubuntu" rel="stylesheet">
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- MDB css -->
+    <link href="css/mdb.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap CSS & JS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- W3.CSS for screenshots gallery -->
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet"> 
+    <!-- CSS -->
+    <link href="css/styles-project.css" rel="stylesheet" type="text/css">
+    
+    <!-- JS codes -->
+    <script defer src="js/scripts-490.js"></script>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="favicon.png">
+
+    <title>Battle-490 | hilmihisham</title>
+</head>
+<body>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top pt-1 pb-1" style="background: rgba(0, 67, 105, 0.7)">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/"><img src="images/doodle400x400.png" alt="Logo" style="width:32px;"></a>
+        
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link my-navlink-color" href="/"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;HOME</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link my-navlink-color" href="projects-page.html"><i class="fas fa-code"></i>&nbsp;&nbsp;CODE REPO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link my-navlink-color" href="resume-page.html"><i class="fas fa-address-card"></i>&nbsp;&nbsp;RESUME</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-code-branch"></i>&nbsp;&nbsp;PROJECTS</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="battle490.html">Battle-490</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link my-navlink-color" href="blog-index.html"><i class="fab fa-tumblr"></i>&nbsp;&nbsp;#text</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Intro -->
+    <header>
+        <!-- Mask (edit ID name, and include header photo in styles-project.css) -->
+        <div id="intro-battle" class="view">
+            <div class="mask rgba-teal-light">
+                <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                    <div class="row d-flex justify-content-center text-center">
+                        <div class="col-md-10">
+                            <!-- Heading -->
+                            <h1 class="pt-5 mb-2">Battle-490</h1>
+                            <!-- Description -->
+                            <h2 class="my-4">AR Turn-based Multiplayer Strategy Game | <a href="https://github.com/hilmihisham/Battle-490" target="_blank"><i class="fab fa-github-alt"></i></a> | <a href="https://drive.google.com/file/d/1pX4AZTVs45SGL4HLg69O-kjLuBop_-8A/view?usp=sharing" target="_blank"><i class="fas fa-download"></i> </a></h2>
+                            <div id="downarrow" onclick="scrollDown()">&#8595;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <section class="section1 sectiontop">
+            <div class="container">
+                <p>
+                    An <b>Augmented Reality (AR) Turn-based Multiplayer Strategy game</b> developed during my final year in CSUN for Senior Design Project course. It is a year-long project, following the full duration of the course, and we managed to finish the core components of the game including the whole game mechanism and most importantly the graphics.
+                    <br><br>
+                    While the gameplay has been successfully developed in time, it is not without its own quirks and - in no other way of saying it - bugs. I've gotta admit that the love-hate relationship between me and this game is still there, but I do love working on Unity3D and making games. Given time, the sentimental value of this project might risen up again, and I'll probably will continue working on this once more. 
+                    <br><br>
+                    Until then, only this website will tell the tale of this project.
+                    <br>
+                </p>
+                <p class="text-right"><i>The so-called Product Owner,<br>Hilmi.</i></p>
+            </div>
+        </section>
+
+        <section class="section2">
+            <div class="container">
+                <div class="videoWrapper">
+                    <iframe src="https://www.youtube.com/embed/C_YgYCHOURM?rel=0&amp;showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="section3">
+            <div class="container">
+                <h2 class="sectiontext">Main Idea</h2>
+                <p class="pt-3">
+                    The main idea for the game is the player will have the ability <b>to control multiple characters</b> (called “toon”) from their own team and <b>destroy the enemy’s Supercomputer</b> (after collecting enough points (490 points) in the duration of the game) to win the game. Also, player will have to <b>work on a strategy to protect their own Supercomputer</b> with the toons in their disposal.
+                    <br><br>
+                    At the start of the game, player will initially have only 5 toons in their team. As the battle goes on, player can navigate their toons and interact with items on the field for the possibility to spawn more toons into their team, increasing their total score, or got penalized by collecting a random bomb disguised as collectable items.
+                </p>
+            </div>
+        </section>
+
+        <section class="section4">
+            <div class="container">
+                <h2 class="sectiontext">Technicalities</h2>
+                <p class="pt-3">
+                    <ul>
+                        <li><b>Game genre</b></li>
+                        <ul><li>Augmented Reality (AR) Turn-based Multiplayer Strategy</li></ul>
+                        <li><b>Deployment environment</b></li>
+                        <ul><li>Android 7.0 Nougat or above</li></ul>
+                        <li><b>Game engine</b></li>
+                        <ul><li>Unity3D</li></ul>
+                        <li><b>AR engine</b></li>
+                        <ul><li>Vuforia</li></ul>
+                        <li><b>Primary language</b></li>
+                        <ul><li>C#</li></ul>
+                    </ul>
+                </p>
+            </div>
+        </section>
+
+        <section class="section1">
+            <div class="container">
+                <h2 class="sectiontext">Screenshots</h2>
+                <div class="w3-display-container pt-3">
+                    <div class="w3-display-container screenshots">
+                        <img src="images/battle490/ss1.jpg" style="width:100%">
+                        <div class="w3-display-bottomleft w3-medium w3-container w3-padding-16 w3-black">
+                            Gathering collectable items to increase points...
+                        </div>
+                    </div>
+                    <div class="w3-display-container screenshots">
+                        <img src="images/battle490/ss2.jpg" style="width:100%">
+                        <div class="w3-display-bottomleft w3-medium w3-container w3-padding-16 w3-black">
+                            ..or in some cases, hitting a hidden bomb among the collectables and lose some points.
+                        </div>
+                    </div>
+                    <div class="w3-display-container screenshots">
+                        <img src="images/battle490/ss3.jpg" style="width:100%">
+                        <div class="w3-display-bottomleft w3-medium w3-container w3-padding-16 w3-black">
+                            Toons available: Hard Disk, RAM, and CPU.
+                        </div>
+                    </div>
+                    <div class="w3-display-container screenshots">
+                        <img src="images/battle490/ss4.jpg" style="width:100%">
+                        <div class="w3-display-bottomleft w3-medium w3-container w3-padding-16 w3-black">
+                            Toons available: Hard Disk, RAM, and CPU.
+                        </div>
+                    </div>
+                    <div class="w3-display-container screenshots">
+                        <img src="images/battle490/ss5.jpg" style="width:100%">
+                        <div class="w3-display-bottomleft w3-medium w3-container w3-padding-16 w3-black">
+                            Spawned items: Desktop (adding player's toons), and collectables (to increase player's points).
+                        </div>
+                    </div>
+                    <div class="w3-display-container screenshots">
+                        <img src="images/battle490/ss6.jpg" style="width:100%">
+                        <div class="w3-display-bottomleft w3-medium w3-container w3-padding-16 w3-black">
+                            Supercomputer.
+                        </div>
+                    </div>
+                    <div class="w3-display-container screenshots">
+                        <img src="images/battle490/ss7.jpg" style="width:100%">
+                        <div class="w3-display-bottomleft w3-medium w3-container w3-padding-16 w3-black">
+                            Spawning new toon.
+                        </div>
+                    </div>
+
+                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section2">
+            <div class="container">
+                <h2 class="sectiontext">Documentations</h2>
+                <p class="pt-3">
+                    Like any other big project, we also made use of project documentations to (try to) keep track of where we at on the project at any given moment. Below is all the documentation we have when we finished the project for the course.
+                    <br>
+                    <ul>
+                        <li><b>Project Presentation</b></li>
+                        <ul>
+                            <li>This slides was used during our final presentation, showcasing our projects to the professor, and our class members.</li>
+                            <li><i class="far fa-file-powerpoint"></i> <a href="files/490Presentation.pdf" target="_blank" class="my-links">Link to presentation.</a></li>
+                        </ul>
+                        <li><b>Project Design Documentation</b></li>
+                        <ul>
+                            <li>This document was made to record all the concepts and ideas behind our game. Initially used internally as the specification to build our game, this finalized document has been refined to include all the technical stuff via UML diagrams as well as the gameplay written in detailed text.</li>
+                            <li><i class="far fa-file-alt"></i> <a href="files/490DesignDocs.pdf" target="_blank" class="my-links">Link to documentation.</a></li>
+                        </ul>
+                        <li><b>Project Backlog</b></li>
+                        <ul>
+                            <li>We used Trello to keep track of everyone's tasks before, but failed quite miserably to keep using it past Day 0 of the development (mainly because of everyone just sort of using mental notes to determine what next to to for them). In the end, I made this custom spreadsheet (by simplifying MIT Sprint Tracking spreadsheet for better suit our need), halfway struggling to keep it updated (due to not specifying a proper guideline for it in the first place), but it sort of worked.</li>
+                            <li><i class="fas fa-table"></i> <a href="files/490Backlog.pdf" target="_blank" class="my-links">Link to backlog.</a></li>
+                        </ul>
+                        <li><b>Project Schedule and Sprint Retrospective</b></li>
+                        <ul>
+                            <li>We tried to list down the big idea of what needs to be done in the semester in this Project Schedule. As time and sprint sessions goes by, we try to update the schedule here depending on situation at hand. At the end of every sprint session, we have a retrospective session going with our professor, and the review is then written in here as well.</li>
+                            <li><i class="far fa-calendar-alt"></i> <a href="files/490ScheduleRetrospective.pdf" target="_blank" class="my-links">Link to sprint schedule and retrospective.</a></li>
+                        </ul>
+                    </ul>
+                </p>
+            </div>
+        </section>
+
+        <section class="section3">
+            <div class="container">
+                <h2 class="sectiontext">Download</h2>
+                <p class="pt-3">
+                    As the sentimental value wasn't risen up just yet, I haven't touch anything on this project so far after our final project presentation at the end of the one year duration of this Senior Design Project course. Thus, the binary file linked below is <i>exactly the same as the one we use during the demo</i> part of the presentation. 
+                    <br><br>
+                    <i class="fas fa-download"></i> <a href="https://drive.google.com/file/d/1pX4AZTVs45SGL4HLg69O-kjLuBop_-8A/view?usp=sharing" target="_blank" class="my-links">Download .apk (v1) for Android.</a>
+                    <br>
+                    <i class="far fa-image"></i> <a href="files/490markerimg.jpg" target="_blank" class="my-links">Print this marker image (scale to fit the whole paper) and direct it to your phone's camera to build the AR game field.</a>
+                    <br><br>
+                    As it is an Augmented Reality (AR) application, we recommend you to sideload the app on an Android phone running <b>Android 7.0 Nougat or above</b>. For the time being, we haven't deploy the iOS version of the game yet.
+                    <br><br>
+                    If "Auto Match Make" didn't work, get one player to host the game and connect others via the host's IP address.
+                </p>
+            </div>
+        </section>
+
+        <!-- contact links section (before footer) -->
+        <section class="sectionend3">
+            <div class="container">
+                <div class="contact-info">
+                    <a href="mailto:mail@hilmihisham.com"><i class="far fa-envelope"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://github.com/hilmihisham" target="_blank"><i class="fab fa-github-alt"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://www.linkedin.com/in/hilmihisham/" target="_blank"><i class="fab fa-linkedin"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://hilmihisham.tumblr.com" target="_blank"><i class="fab fa-tumblr"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://www.instagram.com/hilmihisham/" target="_blank"><i class="fab fa-instagram"></i></a><span style="font-size: 200%">&nbsp;&nbsp;</span>
+                    <a href="https://www.youtube.com/channel/UCAMEaCIqFgxEumO5nML_Kxg"><i class="fab fa-youtube"></i></a>
+                    <br><br>
+                    <p>Found a bug? Thought of collaborating? Or just wanna talk? Let's keep in touch!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer">
+        <p>Copyright <i class="far fa-copyright"></i> 2019 | Muhammad Hilmi Badrol Hisham</p>
+    </footer>
+</body>
+</html>
