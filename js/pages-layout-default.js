@@ -5,6 +5,6 @@ $(document).ready(function() {
 
 function footerCopyrightYear() {
     var currentYear = new Date().getFullYear();
-    console.log("footerCopyrightYear = " + currentYear);
+    //console.log("footerCopyrightYear = " + currentYear);
     document.getElementById("footerCopyrightYear").innerHTML = currentYear;
 }

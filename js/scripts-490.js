@@ -3,7 +3,7 @@ showDivs(slideIndex);
 
 // down arrow on the header picture
 function scrollDown() {
-    console.log('scrolling...');
+    //console.log('scrolling...');
     window.scrollTo({
         top: window.innerHeight,
         behavior: "smooth"
