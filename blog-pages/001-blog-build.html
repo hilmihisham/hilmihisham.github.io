@@ -7,7 +7,7 @@
 
     <!-- markdown to HTML -->
     <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
     
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Bitter:700|Ubuntu" rel="stylesheet">
@@ -95,8 +95,8 @@
 
         <!-- 
             blog1: mask rgba-orange-light
-            blog2: mask rgba-cyan-light
-            blog3: mask rgba-green-light
+            blog2: mask rgba-green-light
+            blog3: mask rgba-cyan-light
             blog4: mask rgba-red-light
         -->
         <!-- sectionblogX for bg color, sectionblogpost for padding, keep the <style> on this page for .md CSS styling -->
@@ -106,12 +106,12 @@
                     <template>
                         <style>
                             h1, h2, h3, h4, h5, h6 { font-family: 'Bitter', serif; margin-bottom: 0%; padding-bottom: 10px; border-bottom: 1px dashed #8a1d00; }
-                            p, li, a { font-family: 'Ubuntu', sans-serif; font-size: 110%; }
+                            p, li, a { font-family: 'Ubuntu', sans-serif; font-size: 100%; }
                             a:hover { cursor: pointer; color: #cc2c00; }
-                            img { width: 100%; border-radius: 1%; }
-                            pre { padding: 16px; background-color: rgb(171, 201, 219); }
-                            code { background-color: rgb(171, 201, 219); padding: .2em .4em; font-size: 110%; word-wrap: break-word;}
-                        </style>           
+                            img { width: 100%; border-radius: 15px; }
+                            pre { padding: 16px; background-color: rgb(171, 201, 219); overflow-x: auto; border-radius: 5px; }
+                            code { background-color: rgb(171, 201, 219); padding: .2em .4em; font-size: 110%; word-wrap: break-word; }
+                        </style>
                     </template>
                 </zero-md>
             </div>
