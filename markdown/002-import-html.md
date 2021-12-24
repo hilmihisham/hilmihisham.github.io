@@ -21,7 +21,7 @@ function includeHTML() {
         elmnt = z[i];
 
         // search for element with a certain attributes
-        file = elmnt.getAttribute("w3-include-html");
+        file = elmnt.getAttribute("includeHTML");
 
         if (file) {
             // make an HTTP request using the attribute value as the file name
@@ -36,7 +36,7 @@ function includeHTML() {
                     }
 
                     // remove the attribute, and call this function once more
-                    elmnt.removeAttribute("w3-include-html");
+                    elmnt.removeAttribute("includeHTML");
                     includeHTML();
                 }
             }
@@ -60,12 +60,12 @@ Once the above JS script has been created, we can now import it into the HTML fi
 </head>
 ```
 
-Notice that there's a line `elmnt.getAttribute("w3-include-html");` in the JS script, this is telling that we're looking for attribute named `w3-include-html` in the HTML file to be replaced with another HTML file that we're importing from, which is specified within this attribute. In HTML body, it goes like this:
+Notice that there's a line `elmnt.getAttribute("includeHTML");` in the JS script, this is telling that we're looking for attribute named `includeHTML` in the HTML file to be replaced with another HTML file that we're importing from, which is specified within this attribute. In HTML body, it goes like this:
 
 ```html
 <body>
     ...
-    <div w3-include-html="projectRealCar-cardCarousel.html"></div> 
+    <div includeHTML="projectRealCar-cardCarousel.html"></div> 
     ...
 </body>
 ```
