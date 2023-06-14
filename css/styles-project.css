@@ -226,20 +226,36 @@ footer {
 ------------------------------------*/
 /* to move the page indicators below carousel items */
 .carousel-indicators {
-    bottom:-50px;
+    bottom: -50px;
 }
 .carousel-inner {
-    margin-bottom:50px;
+    margin-bottom: 50px;
 }
+
+/* new left/right arrow measurement */
+.carousel-control-prev, .carousel-control-next {
+    width: 3em;
+}
+.carousel-control-prev-icon {
+    left: 0;
+}
+.carousel-control-next-icon {
+    right: 0;
+}
+.carousel {
+    padding-left: 3.5em;
+    padding-right: 3.5em;
+}
+
 /* to move the left/right arrows outside carousel items */
-.carousel-control-prev {
+/* .carousel-control-prev {
     margin-left: -120px;
 }
 .carousel-control-next {
     margin-right: -120px;
-}
+} */
 /* resize the carousel left/right side to get the arrows out of the items */
-.carousel {
+/* .carousel {
     margin-left: 30px;
     margin-right: 30px;
-}
+} */
