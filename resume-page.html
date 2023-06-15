@@ -11,10 +11,10 @@
     <!-- MDB css (for header photo and title) -->
     <link href="css/mdb.css" rel="stylesheet" type="text/css">
     <!-- Bootstrap CSS & JS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!-- update to bootstrap 5.3.0 <css> & <js+popper bundle> [20230615] -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <!-- CSS -->
     <link href="css/styles-project.css" rel="stylesheet" type="text/css">
 
@@ -24,46 +24,17 @@
     <!-- JS import -->
     <script src="js/pages-layout-default.js"></script>
 
+    <!-- html include -->
+    <script src="js/html-include.js"></script>
+
     <title>resume | hilmihisham</title>
     <!-- Favicons -->
     <link rel="shortcut icon" href="favicon.png">
 </head>
 <body>
     <!-- navigation bar -->
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top pt-1 pb-1" style="background: rgba(0, 67, 105, 0.7)">
-        <!-- Brand -->
-        <a class="navbar-brand" href="/"><img src="images/doodle400x400.png" alt="Logo" style="width:32px;"></a>
-        
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link my-navlink-color" href="home-dashboard.html"><i class="fas fa-igloo"></i>&nbsp;&nbsp;HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link my-navlink-color" href="projects-page.html"><i class="fas fa-code"></i>&nbsp;&nbsp;CODE REPO</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link my-navlink-color" href="resume-page.html"><i class="fas fa-address-card"></i>&nbsp;&nbsp;RESUME</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-code-branch"></i>&nbsp;&nbsp;PROJECTS</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background: rgba(105, 205, 255, 0.8)">
-                        <a class="dropdown-item" href="battle490.html">Battle-490</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link my-navlink-color" href="blog-index.html"><i class="fab fa-tumblr"></i>&nbsp;&nbsp;#text</a>
-                </li>
-            </ul>
-        </div>
-    </nav> 
-    
+    <div includeHTML="navbar.html"></div>
+
     <!-- Intro -->
     <header>
         <!--Mask-->
@@ -274,5 +245,8 @@
     <footer id="footer">
         <p>Copyright <i class="far fa-copyright"></i> <span id="footerCopyrightYear">20XX</span> | Muhammad Hilmi Badrol Hisham</p>
     </footer>
+
+    <!-- include html -->
+    <script>includeHTML();</script>
 </body>
 </html>
