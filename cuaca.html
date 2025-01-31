@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Bitter:700|Ubuntu" rel="stylesheet">
+    <!-- Font Awesome icons kit v6 24122021 -->
+    <script src="https://kit.fontawesome.com/83b0cc3964.js" crossorigin="anonymous"></script>
+    <!-- MDB css (for header photo and title) -->
+    <link href="css/mdb.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap CSS & JS -->
+        <!-- update to bootstrap 5.3.0 <css> & <js+popper bundle> [20230615] -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link href="css/styles-project.css" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Malaysia Postcodes regular version -->
+    <script src="https://cdn.jsdelivr.net/npm/malaysia-postcodes@2.3.0/dist/malaysia-postcodes.js"></script>
+
+    <!-- JS scroll down -->
+    <script src="js/scroll-down.js"></script>
+
+    <!-- JS import -->
+    <script src="js/pages-layout-default.js"></script>
+
+    <!-- html include -->
+    <script src="js/html-include.js"></script>
+
+    <title>cuaca | hilmihisham</title>
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="favicon.png">
+</head>
+<body>
+    <!-- navigation bar -->
+    <div includeHTML="navbar.html"></div>
+    
+    <!-- Intro -->
+    <header>
+        <!-- Mask (edit ID name, and include header photo in styles-project.css) -->
+        <div id="intro-cuaca" class="view">
+            <div class="mask rgba-teal-light">
+                <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                    <div class="row d-flex justify-content-center text-center">
+                        <div class="col-md-10">
+                            <!-- Heading -->
+                            <h1 class="pt-5 mb-2">MALAYSIA WEATHER FORECAST</h1>
+                            <!-- Description -->
+                            <h2 class="my-4">It's always sunny in [insert city name here] | <a href="https://developer.data.gov.my/ms/realtime-api/weather" target="_blank"><i class="fa-solid fa-poo-storm"></i></a></h2>
+                            <div id="downarrow" onclick="scrollDown()">&#8595;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <section class="section1 sectiontop">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="input-group col-6">
+                        <input type="number" inputmode="numeric" class="form-control" id="poskod-input" placeholder="Poskod">
+                        <button class="btn btn-primary" type="button" onclick="poskodCari()" id="poskod-cari">Cari</button>
+                        <button class="btn btn-danger" type="button" onclick="poskodPadam()">Padam</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section2">
+            <div class="container">
+                <h2 class="sectiontext d-none" id="poskod-city" style="text-align: center;"></h2>
+                <div class="container text-center pt-3 d-none" id="cuaca-now-container">
+                    <div class="row">
+                        <div class="col" id="cuaca-now-time-col"></div>
+                        <div class="col" id="cuaca-now-forecast-col"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section3">
+            <div class="container">
+
+                <div class="accordion d-none" id="accordionPanelsStayOpenWeather">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                <i class="bi bi-calendar3"></i>&nbsp;&nbsp;<span name="date"></span>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <table class="table table-striped text-center align-middle">
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="bi bi-sunrise" style="font-size: 2rem;"></i><br>Morning</td>
+                                            <td name="morning_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-sun" style="font-size: 2rem;"></i><br>Afternoon</td>
+                                            <td name="afternoon_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-moon-stars" style="font-size: 2rem;"></i><br>Night</td>
+                                            <td name="night_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-sun" style="font-size: 2rem;"></i><br>Max</td>
+                                            <td name="max_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-snow" style="font-size: 2rem;"></i><br>Min</td>
+                                            <td name="min_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                <i class="bi bi-calendar3"></i>&nbsp;&nbsp;<span name="date"></span>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <table class="table table-striped text-center align-middle">
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="bi bi-sunrise" style="font-size: 2rem;"></i><br>Morning</td>
+                                            <td name="morning_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-sun" style="font-size: 2rem;"></i><br>Afternoon</td>
+                                            <td name="afternoon_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-moon-stars" style="font-size: 2rem;"></i><br>Night</td>
+                                            <td name="night_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-sun" style="font-size: 2rem;"></i><br>Max</td>
+                                            <td name="max_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-snow" style="font-size: 2rem;"></i><br>Min</td>
+                                            <td name="min_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                <i class="bi bi-calendar3"></i>&nbsp;&nbsp;<span name="date"></span>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <table class="table table-striped text-center align-middle">
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="bi bi-sunrise" style="font-size: 2rem;"></i><br>Morning</td>
+                                            <td name="morning_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-sun" style="font-size: 2rem;"></i><br>Afternoon</td>
+                                            <td name="afternoon_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-moon-stars" style="font-size: 2rem;"></i><br>Night</td>
+                                            <td name="night_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-sun" style="font-size: 2rem;"></i><br>Max</td>
+                                            <td name="max_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-snow" style="font-size: 2rem;"></i><br>Min</td>
+                                            <td name="min_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                <i class="bi bi-calendar3"></i>&nbsp;&nbsp;<span name="date"></span>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <table class="table table-striped text-center align-middle">
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="bi bi-sunrise" style="font-size: 2rem;"></i><br>Morning</td>
+                                            <td name="morning_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-sun" style="font-size: 2rem;"></i><br>Afternoon</td>
+                                            <td name="afternoon_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-moon-stars" style="font-size: 2rem;"></i><br>Night</td>
+                                            <td name="night_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-sun" style="font-size: 2rem;"></i><br>Max</td>
+                                            <td name="max_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-snow" style="font-size: 2rem;"></i><br>Min</td>
+                                            <td name="min_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                                <i class="bi bi-calendar3"></i>&nbsp;&nbsp;<span name="date"></span>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <table class="table table-striped text-center align-middle">
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="bi bi-sunrise" style="font-size: 2rem;"></i><br>Morning</td>
+                                            <td name="morning_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-sun" style="font-size: 2rem;"></i><br>Afternoon</td>
+                                            <td name="afternoon_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-moon-stars" style="font-size: 2rem;"></i><br>Night</td>
+                                            <td name="night_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-sun" style="font-size: 2rem;"></i><br>Max</td>
+                                            <td name="max_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-snow" style="font-size: 2rem;"></i><br>Min</td>
+                                            <td name="min_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                                <i class="bi bi-calendar3"></i>&nbsp;&nbsp;<span name="date"></span>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <table class="table table-striped text-center align-middle">
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="bi bi-sunrise" style="font-size: 2rem;"></i><br>Morning</td>
+                                            <td name="morning_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-sun" style="font-size: 2rem;"></i><br>Afternoon</td>
+                                            <td name="afternoon_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-moon-stars" style="font-size: 2rem;"></i><br>Night</td>
+                                            <td name="night_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-sun" style="font-size: 2rem;"></i><br>Max</td>
+                                            <td name="max_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-snow" style="font-size: 2rem;"></i><br>Min</td>
+                                            <td name="min_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false" aria-controls="panelsStayOpen-collapseSeven">
+                                <i class="bi bi-calendar3"></i>&nbsp;&nbsp;<span name="date"></span>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <table class="table table-striped text-center align-middle">
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="bi bi-sunrise" style="font-size: 2rem;"></i><br>Morning</td>
+                                            <td name="morning_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-sun" style="font-size: 2rem;"></i><br>Afternoon</td>
+                                            <td name="afternoon_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-moon-stars" style="font-size: 2rem;"></i><br>Night</td>
+                                            <td name="night_forecast"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-sun" style="font-size: 2rem;"></i><br>Max</td>
+                                            <td name="max_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="bi bi-thermometer-snow" style="font-size: 2rem;"></i><br>Min</td>
+                                            <td name="min_temp" style="font-size: 2rem;"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <p id="cuacaApi" style="font-size: 0.75rem;"></p>
+                <p id="cuacaResult"></p>
+
+            </div>
+        </section>
+
+        <section class="section4">
+            <div class="container">
+                <h2 class="sectiontext">Intro</h2>
+                <ul class="pt-3">
+                    <li>I was bored one day, and decided to casually googled up "fun coding idea to do over the weekend".</li>
+                    <li>The main idea was just to get a weather forecast, but after I found a Weather API by Malaysian government, I saw the need to use city name to get a more useful data.</li>
+                    <li>Thus, I added another idea on top to get city name from postcode number.</li>
+                </ul>
+                <h2 class="sectiontext">Outtro</h2>
+                <ul class="pt-3">
+                    <li>My main objective is cleared: I did this over some holiday that I got.</li>
+                    <li>I thought of using some other tools/techs, but I prioritize on finishing the project (using whatever things that I have) rather than testing new stuff.</li>
+                    <li>I didn't touch Bootstrap (HTML) and JavaScript for a while, but I google and read the documents for a while and I was ready to put my ideas on solving this project into code.</li>
+                    <ul>
+                        <li>I admit that my memory wasn't great. I did not remember most of the functionality of a programming language.</li>
+                        <li>But what I can showcase here is my good understading on how to utilize documents to get to my expected result. This also shows my good adaptability towards any programming language - I've left my website (HTML, CSS, JS) untouched for around 2 years, but I still able to pick it up and write new things within short period of time.</li>
+                    </ul>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section1">
+            <div class="container">
+                <h2 class="sectiontext">Reference</h2>
+                <p class="pt-3">
+                    Weather API: <a href="https://developer.data.gov.my/realtime-api/weather">https://developer.data.gov.my/realtime-api/weather</a>
+                    <br>
+                    NPM Malaysia Postcodes: <a href="https://github.com/AsyrafHussin/npm-malaysia-postcodes">https://github.com/AsyrafHussin/npm-malaysia-postcodes</a>
+                    <br>
+                    Make API call in JS: <a href="https://www.freecodecamp.org/news/make-api-calls-in-javascript/">https://www.freecodecamp.org/news/make-api-calls-in-javascript/</a>
+                    <br>
+                    Passing HTML value into JS function: <a href="https://stackoverflow.com/a/5316010">https://stackoverflow.com/a/5316010</a>
+                    <br>
+                    Replace space with %20: <a href="https://stackoverflow.com/a/12141288">https://stackoverflow.com/a/12141288</a>
+                    <br>
+                    Interpolate variable in string in JS: <a href="https://stackoverflow.com/a/28088965">https://stackoverflow.com/a/28088965</a>  
+                </p>
+            </div>
+        </section>
+
+        <!-- contact links section (before footer) -->
+        <section class="sectionend3">
+            <div class="container">
+                <div includeHTML="footerContact.html"></div>
+            </div>
+        </section>
+    
+    </main>
+
+    <!-- footer -->
+    <footer id="footer">
+        <p>Copyright <i class="far fa-copyright"></i> <span id="footerCopyrightYear">20XX</span> | Muhammad Hilmi Badrol Hisham</p>
+    </footer>
+
+    <!-- include html -->
+    <script>includeHTML();</script>
+
+    <!-- poskod script -->
+    <script>
+        var posokodInputField = document.getElementById("poskod-input");
+
+        // Execute a function when the user presses a key on the keyboard
+        posokodInputField.addEventListener("keypress", function(event) {
+            // If the user presses the "Enter" key on the keyboard
+            if (event.key === "Enter") {
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Trigger the button element with a click
+                document.getElementById("poskod-cari").click();
+            }
+        });
+
+        function poskodCari() {
+            var poskodInput = document.getElementById('poskod-input').value;
+            var locationExact = malaysiaPostcodes.findPostcode(poskodInput);
+
+            const poskodCityElement = document.getElementById('poskod-city');
+            const cuacaNowElement = document.getElementById('cuaca-now-container');
+
+            if (locationExact.found == true) {
+                // display city name and make it visible
+                poskodCityElement.innerHTML = locationExact.city;
+                poskodCityElement.className = "sectiontext d-block";
+
+                // make current weather visible
+                cuacaNowElement.className = "container text-center pt-3 d-block";
+
+                // get weather forecast
+                cuacaGet(locationExact.city);
+            }
+            else {
+                // display error and make it visible
+                poskodCityElement.innerHTML = "Poskod not found.";
+                poskodCityElement.className = "sectiontext d-block";
+
+                // make current weather invisible
+                cuacaNowElement.className = "container text-center pt-3 d-none";
+
+                // make forecast table invisible
+                document.getElementById("accordionPanelsStayOpenWeather").className = "accordion d-none";
+
+                // remove API URL (in case it got value from previous search)
+                document.getElementById('cuacaApi').innerHTML = '';
+            }
+        }
+
+        function cuacaGet(cityName) {
+            var apiUrl = 'https://api.data.gov.my/weather/forecast';
+            const outputUrl = document.getElementById('cuacaApi');
+            const outputResult = document.getElementById('cuacaResult');
+
+            var city = encodeURIComponent(cityName);
+            apiUrl += `?contains=${city}@location__location_name&limit=7&sort=date`;
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        
+                        // response.status == 429, display error on screen
+                        outputUrl.textContent = '';
+                        outputResult.textContent = "Too Many Request. Please try again in a minute.";
+
+                        // make current weather invisible
+                        document.getElementById("cuaca-now-container").className = "container text-center pt-3 d-none";
+
+                        // make forecast table invisible
+                        document.getElementById("accordionPanelsStayOpenWeather").className = "accordion d-none";
+
+                        throw new Error('Network response was not ok.');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.length != 0) {
+                        // if we got here, that means our API call is OK
+                        // make forecast table visible
+                        document.getElementById("accordionPanelsStayOpenWeather").className = "accordion d-block";
+
+                        // get all the nodes for forecast table
+                        const accordionDateNode = document.getElementsByName("date");
+                        const accordionMorningNode = document.getElementsByName("morning_forecast");
+                        const accordionAfternoonNode = document.getElementsByName("afternoon_forecast");
+                        const accordionNightNode = document.getElementsByName("night_forecast");
+                        const accordionMaxTempNode = document.getElementsByName("max_temp");
+                        const accordionMinTempNode = document.getElementsByName("min_temp");
+
+                        // fill in data into forecast table
+                        for (let index = 0; index < data.length; index++) {
+                            accordionDateNode[index].textContent = dataJsonToOuterHtml(data[index].date, "date");
+                            accordionMorningNode[index].outerHTML = dataJsonToOuterHtml(data[index].morning_forecast, "morning_forecast");
+                            accordionAfternoonNode[index].outerHTML = dataJsonToOuterHtml(data[index].afternoon_forecast, "afternoon_forecast");
+                            accordionNightNode[index].outerHTML = dataJsonToOuterHtml(data[index].night_forecast, "night_forecast");
+                            accordionMaxTempNode[index].textContent = data[index].max_temp;
+                            accordionMinTempNode[index].textContent = data[index].min_temp;
+                        }
+
+                        // fill in current weather
+                        // get current time (morning, afternoon, night)
+                        var nowDate = new Date();
+                        var nowDay = nowDate.toLocaleString("default", { weekday: "long" });
+
+                        const cuacaNowTimeCol = document.getElementById('cuaca-now-time-col');
+                        const cuacaNowForecastCol = document.getElementById('cuaca-now-forecast-col');
+
+                        // display appropriate data
+                        if (nowDate.getHours() < 12) {
+                            // morning_forecast
+                            cuacaNowTimeCol.innerText = nowDay + '\nMorning';
+                            cuacaNowForecastCol.outerHTML = dataJsonToOuterHtml(data[0].morning_forecast, "cuacaNow");
+                        }
+                        else if (nowDate.getHours() >= 12 && nowDate.getHours() < 20) {
+                            // afternoon_forecast
+                            cuacaNowTimeCol.innerText = nowDay + '\nAfternoon';
+                            cuacaNowForecastCol.outerHTML = dataJsonToOuterHtml(data[0].afternoon_forecast, "cuacaNow");
+                        }
+                        else {
+                            // night_forecast
+                            cuacaNowTimeCol.innerText = nowDay + '\nNight';
+                            cuacaNowForecastCol.outerHTML = dataJsonToOuterHtml(data[0].night_forecast, "cuacaNow");
+                        }
+
+                        // fill in API URL
+                        outputUrl.textContent = `Cuaca API Endpoint: ${apiUrl}`;
+                        outputResult.textContent = '';
+                    }
+                    else {
+                        // make current weather invisible
+                        document.getElementById("cuaca-now-container").className = "container text-center pt-3 d-none";
+                        
+                        // make forecast table invisible
+                        document.getElementById("accordionPanelsStayOpenWeather").className = "accordion d-none";
+                        
+                        outputUrl.textContent = '';
+                        outputResult.textContent = "No weather data found for chosen city. Please try again using nearby postcode.";
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        // to create HTML that includes weather icon based on weather data
+        function dataJsonToOuterHtml(forecastString, elName) {
+
+            if (elName === "date") {
+                var datemillisec = new Date(Date.parse(forecastString));
+                var date = new Date(datemillisec).getDate();
+                var month = datemillisec.toLocaleString("default", { month: "long" });
+                var day = datemillisec.toLocaleString("default", { weekday: "long" });
+
+                return `${date} ${month}, ${day}`;
+            }
+
+            if (forecastString.includes("Berjerebu")) {
+                if (elName === "cuacaNow") {
+                    return `<div class="col" id="cuaca-now-forecast-col"><i class="bi bi-cloud-haze2" style="font-size: 2rem;"></i><br>${forecastString}</div>`;
+                }
+                else {
+                    return `<td name="${elName}"><i class="bi bi-cloud-haze2" style="font-size: 2rem;"></i><br>${forecastString}</td>`;
+
+                }
+            }
+            else if (forecastString.includes("Tiada hujan")) {
+                if (elName === "cuacaNow") {
+                    return `<div class="col" id="cuaca-now-forecast-col"><i class="bi bi-sun" style="font-size: 2rem;"></i><br>${forecastString}</div>`;
+                }
+                else {
+                    return `<td name="${elName}"><i class="bi bi-sun" style="font-size: 2rem;"></i><br>${forecastString}</td>`;
+                }
+            }
+            else if (forecastString.includes("Hujan")) {
+                if (elName === "cuacaNow") {
+                    return `<div class="col" id="cuaca-now-forecast-col"><i class="bi bi-cloud-drizzle" style="font-size: 2rem;"></i><br>${forecastString}</div>`;
+                }
+                else {
+                    return `<td name="${elName}"><i class="bi bi-cloud-drizzle" style="font-size: 2rem;"></i><br>${forecastString}</td>`;
+                }
+            }
+            else if (forecastString.includes("Ribut")) {
+                if (elName === "cuacaNow") {
+                    return `<div class="col" id="cuaca-now-forecast-col"><i class="bi bi-cloud-lightning-rain" style="font-size: 2rem;"></i><br>${forecastString}</div>`;
+                }
+                else {
+                    return `<td name="${elName}"><i class="bi bi-cloud-lightning-rain" style="font-size: 2rem;"></i><br>${forecastString}</td>`;
+                }
+            }
+            else {
+                if (elName === "cuacaNow") {
+                    return `<div class="col" id="cuaca-now-forecast-col">${forecastString}</div>`;
+                }
+                else {
+                    return `<td name="${elName}">${forecastString}</td>`;
+                }
+            }
+        }
+
+        function poskodPadam() {
+            document.getElementById('poskod-input').value = '';
+            document.getElementById('poskod-city').innerHTML = '';
+            document.getElementById('cuacaApi').innerHTML = '';
+            document.getElementById('cuacaResult').innerHTML = '';
+
+            // make current weather invisible
+            document.getElementById("cuaca-now-container").className = "container text-center pt-3 d-none";
+
+            // make forecast table invisible
+            document.getElementById("accordionPanelsStayOpenWeather").className = "accordion d-none";
+        }
+    </script>
+</body>
+</html>

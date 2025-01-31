@@ -92,6 +92,14 @@ header {
     -o-background-size: cover;
     background-size: cover;
 }
+#intro-cuaca {
+    height: 100%;
+    background: url(../images/bg-weather.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 header h1 {
     font-size: 2.5em;
     color: white;
