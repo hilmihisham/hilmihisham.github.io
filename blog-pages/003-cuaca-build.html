@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- markdown to HTML -->
+    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+    
+    <!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Bitter:700|Ubuntu" rel="stylesheet">
+    <!-- Font Awesome icons kit v6 24122021 -->
+    <script src="https://kit.fontawesome.com/83b0cc3964.js" crossorigin="anonymous"></script>
+    <!-- MDB css (for header photo and title) -->
+    <link href="../css/mdb.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap CSS & JS -->
+        <!-- update to bootstrap 5.3.0 <css> & <js+popper bundle> [20230615] -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link href="../css/styles-project.css" rel="stylesheet" type="text/css">
+    <link href="../css/styles-blog.css" rel="stylesheet" type="text/css">
+
+    <!-- JS scroll down -->
+    <script src="../js/scroll-down.js"></script>
+
+    <!-- JS import -->
+    <script src="../js/pages-layout-default.js"></script>
+
+    <!-- html include -->
+    <script src="../js/html-include.js"></script>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../favicon.png">
+
+    <title>Building a weather forecast app | hilmihisham</title>
+</head>
+<body>
+    <!-- navigation bar -->
+    <div includeHTML="../navbar.html"></div>
+
+    <!-- Intro -->
+    <header>
+        <!-- Mask (edit ID name, and include header photo in styles-project.css) -->
+        <div id="intro-blog" class="view">
+            <div class="mask rgba-teal-light">
+                <div class="container-fluid d-flex align-items-center justify-content-center h-100">
+                    <div class="row d-flex justify-content-center text-center">
+                        <div class="col-md-10">
+                            <!-- Heading / blog title -->
+                            <h1 class="pt-5 mb-2">#003: Building a weather forecast app.</h1>
+                            <!-- Description / name and date -->
+                            <h3 class="my-4">hilmihisham | 31 January 2025</h3>
+                            <div id="downarrow" onclick="scrollDown()">&#8595;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- 
+            blog1: mask rgba-orange-light
+            blog2: mask rgba-green-light
+            blog3: mask rgba-cyan-light
+            blog4: mask rgba-red-light
+        -->
+        <!-- sectionblogX for bg color, sectionblogpost for padding, keep the <style> on this page for .md CSS styling -->
+        <section class="sectionblog3 sectionblogpost">
+            <div class="container">
+                <zero-md src="/markdown/003-cuaca-build.md">
+                    <template>
+                        <style>
+                            h1, h2, h3, h4, h5, h6 { font-family: 'Bitter', serif; margin-bottom: 0%; padding-bottom: 10px; border-bottom: 1px dashed #8a1d00; }
+                            p, li, a { font-family: 'Ubuntu', sans-serif; font-size: 100%; }
+                            a:hover { cursor: pointer; color: #cc2c00; }
+                            img { width: 100%; border-radius: 15px; }
+                            pre { padding: 16px; background-color: rgb(171, 201, 219); overflow-x: auto; border-radius: 5px; }
+                            code { background-color: rgb(171, 201, 219); padding: .2em .4em; font-size: 110%; word-wrap: break-word; }
+                        </style>
+                    </template>
+                </zero-md>
+            </div>
+        </section>
+
+        <!-- contact links section (before footer) -->
+        <section class="sectionend3">
+            <div class="container">
+                <div includeHTML="../footerContact.html"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer">
+        <p>Copyright <i class="far fa-copyright"></i> <span id="footerCopyrightYear">20XX</span> | Muhammad Hilmi Badrol Hisham</p>
+    </footer>
+
+    <!-- include html -->
+    <script>includeHTML();</script>
+</body>
+</html>
