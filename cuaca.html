@@ -559,7 +559,9 @@
                 return `${date} ${month}, ${day}`;
             }
 
-            if (forecastString.includes("Berjerebu")) {
+            var forecastLowerCase = forecastString.toLowerCase();
+
+            if (forecastLowerCase.includes("berjerebu")) {
                 if (elName === "cuacaNow") {
                     return `<div class="col" id="cuaca-now-forecast-col"><i class="bi bi-cloud-haze2" style="font-size: 2rem;"></i><br>${forecastString}</div>`;
                 }
@@ -568,7 +570,7 @@
 
                 }
             }
-            else if (forecastString.includes("Tiada hujan")) {
+            else if (forecastLowerCase.includes("tiada hujan")) {
                 if (elName === "cuacaNow") {
                     return `<div class="col" id="cuaca-now-forecast-col"><i class="bi bi-sun" style="font-size: 2rem;"></i><br>${forecastString}</div>`;
                 }
@@ -576,7 +578,7 @@
                     return `<td name="${elName}"><i class="bi bi-sun" style="font-size: 2rem;"></i><br>${forecastString}</td>`;
                 }
             }
-            else if (forecastString.includes("Hujan")) {
+            else if (forecastLowerCase.includes("hujan")) {
                 if (elName === "cuacaNow") {
                     return `<div class="col" id="cuaca-now-forecast-col"><i class="bi bi-cloud-drizzle" style="font-size: 2rem;"></i><br>${forecastString}</div>`;
                 }
@@ -584,7 +586,7 @@
                     return `<td name="${elName}"><i class="bi bi-cloud-drizzle" style="font-size: 2rem;"></i><br>${forecastString}</td>`;
                 }
             }
-            else if (forecastString.includes("Ribut")) {
+            else if (forecastLowerCase.includes("ribut")) {
                 if (elName === "cuacaNow") {
                     return `<div class="col" id="cuaca-now-forecast-col"><i class="bi bi-cloud-lightning-rain" style="font-size: 2rem;"></i><br>${forecastString}</div>`;
                 }
@@ -592,7 +594,7 @@
                     return `<td name="${elName}"><i class="bi bi-cloud-lightning-rain" style="font-size: 2rem;"></i><br>${forecastString}</td>`;
                 }
             }
-            else if (forecastString.includes("Mendung")) {
+            else if (forecastLowerCase.includes("mendung")) {
                 if (elName === "cuacaNow") {
                     return `<div class="col" id="cuaca-now-forecast-col"><i class="bi bi-clouds" style="font-size: 2rem;"></i><br>${forecastString}</div>`;
                 }
