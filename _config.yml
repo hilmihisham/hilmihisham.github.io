@@ -1,0 +1,11 @@
+# Keep the Astro app in site/ out of the GitHub Pages build.
+# Setting exclude replaces Jekyll's defaults, so they are listed here too.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - site/

@@ -1,1 +1,8 @@
 .copilot/baseline/
+
+# Astro app (site/)
+site/node_modules/
+site/dist/
+site/.astro/
+.wrangler/
+site/.dev.vars
