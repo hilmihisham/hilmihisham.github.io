@@ -5,7 +5,7 @@ hilmihisham's webpage
 
 ## Development
 
-The site is being migrated to Astro and Cloudflare Workers. The Astro app lives in [site/](site/). The old root HTML files are still the live site until cutover (see issue #9).
+The site is being migrated to Astro and Cloudflare Workers. The Astro app lives in [site/](site/). The old root HTML files are still the live site until cutover (see issue #23).
 
 Requires Node.js 22.23.4 or newer.
 
