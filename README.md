@@ -16,7 +16,13 @@ npm run dev       # dev server at http://localhost:4321
 npm run build     # build to site/dist
 npm run check     # type check .astro and .ts files
 npm run preview   # serve the built site
+npm run lint      # ESLint
+npm run format    # Prettier, writes changes (use format:check to only check)
+npm run test      # unit tests (Vitest)
+npm run test:e2e  # browser tests (Playwright)
 ```
+
+CI runs the same checks on every pull request (see [ci.yml](.github/workflows/ci.yml)): type check, lint, format check, unit tests, build, browser tests, and an internal link check.
 
 To preview the built site as Cloudflare Workers serves it:
 

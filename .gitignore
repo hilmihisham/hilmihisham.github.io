@@ -6,3 +6,5 @@ site/dist/
 site/.astro/
 .wrangler/
 site/.dev.vars
+site/test-results/
+site/playwright-report/

@@ -10,6 +10,11 @@
     "build": "astro build",
     "check": "astro check",
     "preview": "astro preview",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run --passWithNoTests",
+    "test:e2e": "playwright test",
     "astro": "astro"
   },
   "dependencies": {
@@ -22,7 +27,16 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.65.1",
+    "eslint": "^10.15.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-astro": "^3.2.1",
+    "prettier": "^3.10.1",
+    "prettier-plugin-astro": "^1.1.2",
     "typescript": "^6.0.3",
+    "typescript-eslint": "^8.73.0",
+    "vitest": "^5.1.0",
     "wrangler": "^4.164.0"
   }
 }
